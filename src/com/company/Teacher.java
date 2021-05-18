@@ -3,9 +3,9 @@ package com.company;
 import java.util.Objects;
 
 public class Teacher {
-    String name;
-    String surname;
-    String patronymic;
+    private String name;
+    private String surname;
+    private String patronymic;
     private int course;
     private int group;
 

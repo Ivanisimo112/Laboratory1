@@ -12,7 +12,7 @@ public class Department {
         for (int i = 0; i < this.students.length; i++) {
             students[i] = this.students[i];
         }
-        students[students.length - 1] = student;
+        this.students[students.length - 1] = student;
     }
 
     public void addTeacher(Teacher teacher) {
@@ -20,7 +20,7 @@ public class Department {
         for (int i = 0; i < this.teachers.length; i++) {
             teachers[i] = this.teachers[i];
         }
-        teachers[teachers.length - 1] = teacher;
+        this.teachers[teachers.length - 1] = teacher;
     }
 
     public void removeStudent(Student student) {
@@ -60,19 +60,19 @@ public class Department {
             int i = whatChange();
             if (i == 1) {
                 System.out.print("Введіть ім'я: ");
-                students[number].setName(inputString());
+                students[number].setName(Utilities.inputString());
             } else if (i == 2) {
                 System.out.print("Введіть прізвище: ");
-                students[number].setSurname(inputString());
+                students[number].setSurname(Utilities.inputString());
             } else if (i == 3) {
                 System.out.print("Введіть по батькові: ");
-                students[number].setPatronymic(inputString());
+                students[number].setPatronymic(Utilities.inputString());
             } else if (i == 4) {
                 System.out.print("Введіть курс: ");
-                students[number].setCourse(inputInt());
+                students[number].setCourse(Utilities.inputInt());
             } else if (i == 5) {
                 System.out.print("Введіть групу: ");
-                students[number].setGroup(inputInt());
+                students[number].setGroup(Utilities.inputInt());
             }
             System.out.println("Інформація про студента змінена, бажаєте змінити щось ще?(1-так,інше число-ні): ");
             contin = DataInput.getInt();
@@ -97,19 +97,19 @@ public class Department {
             int i = whatChange();
             if (i == 1) {
                 System.out.print("Введіть ім'я: ");
-                teachers[number].setName(inputString());
+                teachers[number].setName(Utilities.inputString());
             } else if (i == 2) {
                 System.out.print("Введіть прізвище: ");
-                teachers[number].setSurname(inputString());
+                teachers[number].setSurname(Utilities.inputString());
             } else if (i == 3) {
                 System.out.print("Введіть по батькові: ");
-                teachers[number].setPatronymic(inputString());
+                teachers[number].setPatronymic(Utilities.inputString());
             } else if (i == 4) {
                 System.out.print("Введіть курс: ");
-                teachers[number].setCourse(inputInt());
+                teachers[number].setCourse(Utilities.inputInt());
             } else if (i == 5) {
                 System.out.print("Введіть групу: ");
-                teachers[number].setGroup(inputInt());
+                teachers[number].setGroup(Utilities.inputInt());
             }
             System.out.println("Інформація про викладача змінена, бажаєте змінити щось ще?(1-так,інше число-ні): ");
             contin = DataInput.getInt();
@@ -130,30 +130,6 @@ public class Department {
             temp = DataInput.getInt();
         }
         return temp;
-    }
-
-    private String inputString() throws IOException {
-        String temp = DataInput.getString();
-        for (int i = 0; i < temp.length(); i++) {
-            if (!((temp.charAt(i) >= 65 && temp.charAt(i) <= 90) || (temp.charAt(i) >= 97 && temp.charAt(i) <= 122)) || temp.charAt(0) < 65 || temp.charAt(0) > 90) {
-                System.out.print("Дозволено використовувати тільки літери англійського алфавіту(перша літера повинна бути великою): ");
-                temp = DataInput.getString();
-                i = 0;
-            }
-        }
-        return temp;
-    }
-
-    private int inputInt() throws IOException {
-        String temp = DataInput.getString();
-        for (int i = 0; i < temp.length(); i++) {
-            if ((temp.charAt(i) > 57 && temp.charAt(i) < 48)) {
-                System.out.print("Дозволено використовувати тільки цифри: ");
-                temp = DataInput.getString();
-                i = 0;
-            }
-        }
-        return Integer.parseInt(temp);
     }
 
     public Department(String name) {

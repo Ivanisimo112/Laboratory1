@@ -4,25 +4,25 @@ import java.io.IOException;
 
 public class University {
     Faculty[] faculties = new Faculty[0];
-    Department[] departments = new Department[0];
+    //Department[] departments = new Department[0];
 
-    public void addDepartment(Department department) {
-        Department[] departments = new Department[this.departments.length + 1];
-        for (int i = 0; i < this.departments.length; i++) {
-            departments[i] = this.departments[i];
-        }
-        departments[departments.length - 1] = department;
-    }
+    //public void addDepartment(Department department) {
+    //        Department[] departments = new Department[this.departments.length + 1];
+    //        for (int i = 0; i < this.departments.length; i++) {
+    //            departments[i] = this.departments[i];
+    //        }
+    //        departments[departments.length - 1] = department;
+    //    }
 
-    public void removeDepartment(Department department) {
-        Department[] departments = new Department[this.departments.length - 1];
-        for (int i = 0; i < this.departments.length; i++) {
-            if (!this.departments[i].equals(department)) {
-                departments[i] = this.departments[i];
-            }
-        }
-        this.departments = departments;
-    }
+    //public void removeDepartment(Department department) {
+    //        Department[] departments = new Department[this.departments.length - 1];
+    //        for (int i = 0; i < this.departments.length; i++) {
+    //            if (!this.departments[i].equals(department)) {
+    //                departments[i] = this.departments[i];
+    //            }
+    //        }
+    //        this.departments = departments;
+    //    }
 
     public void addFaculty(Faculty faculty) {
         Faculty[] faculties = new Faculty[this.faculties.length + 1];
@@ -42,24 +42,24 @@ public class University {
         this.faculties = faculties;
     }
 
-    public void changeDepartment() throws IOException {
-        int number = -1;
-        System.out.println("Введіть назву кафедри ,яку бажаете змінити:");
-        String name = inputString();
-        for (int i = 0; i < departments.length; i++) {
-            if (departments[i].getName().equals(name)) {
-                number = i;
-                break;
-            }
-        }
-        if (number == -1) {
-            System.out.println("Цiєї кафедри немає в списку університету!");
-            return;
-        }
-        System.out.print("Введіть нову назву: ");
-        departments[number].setName(inputString());
-        System.out.println("Назва змінена");
-    }
+    //public void changeDepartment() throws IOException {
+    //        int number = -1;
+    //        System.out.println("Введіть назву кафедри ,яку бажаете змінити:");
+    //        String name = inputString();
+    //        for (int i = 0; i < departments.length; i++) {
+    //            if (departments[i].getName().equals(name)) {
+    //                number = i;
+    //                break;
+    //            }
+    //        }
+    //        if (number == -1) {
+    //            System.out.println("Цiєї кафедри немає в списку університету!");
+    //            return;
+    //        }
+    //        System.out.print("Введіть нову назву: ");
+    //        departments[number].setName(inputString());
+    //        System.out.println("Назва змінена");
+    //    }
 
     public void changeFaculty() throws IOException {
         int number = -1;

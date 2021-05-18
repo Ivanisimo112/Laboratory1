@@ -4,10 +4,8 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Faculty {
-    String name;
-    Department[] departments = new Department[0];
-    Student[] students;
-    Teacher[] teachers;
+    private String name;
+    private Department[] departments = new Department[0];
 
     @Override
     public boolean equals(Object o) {
@@ -15,9 +13,7 @@ public class Faculty {
         if (o == null || getClass() != o.getClass()) return false;
         Faculty faculty = (Faculty) o;
         return Objects.equals(name, faculty.name) &&
-                Arrays.equals(departments, faculty.departments) &&
-                Arrays.equals(students, faculty.students) &&
-                Arrays.equals(teachers, faculty.teachers);
+                Arrays.equals(departments, faculty.departments);
     }
 
     public Faculty(String name) {
