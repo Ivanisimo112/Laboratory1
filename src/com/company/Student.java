@@ -7,6 +7,18 @@ public class Student {
     private String surname;
     private String patronymic;
     private int course;
+
+    @Override
+    public String toString() {
+        return "Студент [" +
+                "Ім'я :'" + name + '\'' +
+                ", Прізвище :'" + surname + '\'' +
+                ", По батькові :'" + patronymic + '\'' +
+                ", Курс :" + course +
+                ", Група :" + group +
+                ']';
+    }
+
     private int group;
 
     @Override

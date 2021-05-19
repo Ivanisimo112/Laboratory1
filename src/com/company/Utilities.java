@@ -26,4 +26,22 @@ public class Utilities {
         }
         return temp;
     }
+
+    public static Student[] addStudent(Student[] students, Student student){
+        Student[] students1 = new Student[students.length+1];
+        for (int i = 0; i < students.length; i++) {
+            students1[i]=students[i];
+        }
+        students1[students1.length-1]=student;
+        return students1;
+    }
+
+    public static Teacher[] addTeacher(Teacher[] teachers, Teacher teacher){
+        Teacher[] teachers1 = new Teacher[teachers.length+1];
+        for (int i = 0; i < teachers.length; i++) {
+            teachers1[i]=teachers[i];
+        }
+        teachers1[teachers1.length-1]=teacher;
+        return teachers1;
+    }
 }
